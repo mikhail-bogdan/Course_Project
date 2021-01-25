@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import sample.client.*?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.client.UIController">
+   <bottom>
+      <VBox BorderPane.alignment="CENTER">
+         <MusicHorizontalBarController fx:id="controller" maxWidth="1.7976931348623157E308" prefHeight="10" />
+         <FlowPane>
+            <padding>
+               <Insets left="15.0" />
+            </padding>
+            <Button fx:id="prevButton" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fx:id="prevImageView" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="playPauseButton" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fx:id="playPauseImageView" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                  </ImageView>
+               </graphic>
+               <FlowPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button fx:id="nextButton" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fx:id="nextImageView" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fx:id="audioImageView" fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true" />
+            <VBox prefHeight="50.0">
+               <Label fx:id="audioNameLabel">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Label>
+               <Label fx:id="authorLabel">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+               </Label>
+            </VBox>
+         </FlowPane>
+      </VBox>
+   </bottom>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #dcdcdc;" BorderPane.alignment="CENTER">
+         <MyButton fx:id="allAudioButton" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" prefHeight="40.0" text="Все треки">
+            <font>
+               <Font size="22.0" />
+            </font>
+            <padding>
+               <Insets left="40.0" />
+            </padding>
+         </MyButton>
+         <MyButton fx:id="playlistsButton" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" prefHeight="40.0" text="Плейлисты">
+            <font>
+               <Font size="22.0" />
+            </font>
+            <padding>
+               <Insets left="40.0" />
+            </padding>
+         </MyButton>
+         <MyButton fx:id="settingsButton" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" prefHeight="40.0" text="Настройки">
+            <font>
+               <Font size="22.0" />
+            </font>
+            <padding>
+               <Insets left="40.0" />
+            </padding>
+         </MyButton>
+      </VBox>
+   </left>
+</BorderPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="jdbc:hsqldb:file:C:/Users/Misha/IdeaProjects/Course Project Last/data/test.db/">
+  <database-model serializer="dbm" dbms="HSQLDB" family-id="HSQLDB" format-version="4.20">
+    <root id="1">
+      <ServerVersion>2.4.0</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="PUBLIC">
+      <Current>1</Current>
+    </database>
+    <schema id="3" parent="2" name="INFORMATION_SCHEMA"/>
+    <schema id="4" parent="2" name="PUBLIC">
+      <Current>1</Current>
+    </schema>
+    <schema id="5" parent="2" name="SYSTEM_LOBS"/>
+    <table id="6" parent="4" name="MUSIC_DATABASE"/>
+    <column id="7" parent="6" name="AUDIOID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="8" parent="6" name="AUTHOR">
+      <Position>2</Position>
+      <DataType>CHARACTER(256)|1s</DataType>
+    </column>
+    <column id="9" parent="6" name="AUDIO_NAME">
+      <Position>3</Position>
+      <DataType>CHARACTER(256)|1s</DataType>
+    </column>
+    <column id="10" parent="6" name="IS_SAVED">
+      <Position>4</Position>
+      <DataType>BOOLEAN|16s</DataType>
+    </column>
+    <index id="11" parent="6" name="SYS_IDX_10091">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>AUDIOID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="12" parent="6" name="MUSIC_DATABASE_PK">
+      <ColNames>AUDIOID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
