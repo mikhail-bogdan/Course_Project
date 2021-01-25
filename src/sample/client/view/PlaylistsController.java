@@ -1,4 +1,4 @@
-package sample.client;
+package sample.client.view;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Pair;
+import sample.client.model.AccountManager;
+import sample.client.model.NetworkManager;
 
 import java.io.IOException;
 import java.net.URL;

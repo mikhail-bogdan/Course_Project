@@ -1,8 +1,9 @@
-package sample.client;
+package sample.client.view;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import sample.client.model.AccountManager;
 
 import java.net.URL;
 import java.util.ResourceBundle;

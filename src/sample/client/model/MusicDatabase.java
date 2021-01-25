@@ -1,4 +1,6 @@
-package sample.client;
+package sample.client.model;
+
+import sample.client.model.ClipData;
 
 import java.sql.*;
 

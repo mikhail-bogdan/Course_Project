@@ -1,8 +1,6 @@
-package sample.client;
+package sample.client.model;
 
-import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ClipGetterThread extends Thread {

@@ -1,4 +1,6 @@
-package sample.client;
+package sample.client.model;
+
+import sample.client.model.MusicSocket;
 
 import java.io.IOException;
 import java.net.Inet4Address;

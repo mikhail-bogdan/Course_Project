@@ -1,4 +1,4 @@
-package sample.client;
+package sample.client.model;
 
 public class ClipData {
     public int id;

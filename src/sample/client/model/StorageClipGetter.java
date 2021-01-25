@@ -1,5 +1,7 @@
-package sample.client;
+package sample.client.model;
 
+import sample.client.model.ClipGetter;
+import sample.client.model.Getter;
 import sample.shared.ByteConverter;
 
 import javax.sound.sampled.AudioFormat;

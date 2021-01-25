@@ -1,4 +1,4 @@
-package sample.client;
+package sample.client.model;
 
 import sample.shared.packets.request.PacketAllAudioRequest;
 import sample.shared.packets.request.PacketGetAudioDataRequest;

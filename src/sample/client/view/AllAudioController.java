@@ -1,4 +1,4 @@
-package sample.client;
+package sample.client.view;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -11,6 +11,9 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
+import sample.client.model.MusicPlaylist;
+import sample.client.model.MusicSocket;
+import sample.client.model.NetworkManager;
 
 import java.net.URL;
 import java.util.ResourceBundle;

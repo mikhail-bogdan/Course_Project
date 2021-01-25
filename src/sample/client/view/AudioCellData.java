@@ -1,4 +1,4 @@
-package sample.client;
+package sample.client.view;
 
 public class AudioCellData {
     public String audioName;

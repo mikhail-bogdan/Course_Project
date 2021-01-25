@@ -1,4 +1,4 @@
-package sample.client;
+package sample.client.view;
 
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -13,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import sample.client.model.AccountManager;
 
 import java.io.IOException;
 import java.net.URL;

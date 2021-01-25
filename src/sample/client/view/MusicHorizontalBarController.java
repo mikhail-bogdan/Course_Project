@@ -1,4 +1,4 @@
-package sample.client;
+package sample.client.view;
 
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -13,6 +13,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Window;
+import sample.client.model.MusicPlayer;
+import sample.client.model.OnProgressChangeEvent;
 
 import java.io.IOException;
 

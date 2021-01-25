@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.client.model.AccountManager;
+import sample.client.model.MusicDatabase;
+import sample.client.model.NetworkManager;
 
 
 public class Launcher extends Application {
