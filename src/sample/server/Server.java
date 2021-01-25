@@ -1,5 +1,7 @@
 package sample.server;
 
+import com.sun.javafx.logging.PlatformLogger;
+import com.sun.javafx.util.Logging;
 import sample.shared.ByteConverter;
 import sample.shared.packets.response.*;
 
@@ -10,9 +12,13 @@ import java.net.Socket;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.logging.LogManager;
 
 public class Server {
+    private static PlatformLogger logger;
     public static void main(String[] args) throws IOException {
+        //LogManager.getLogManager().readConfiguration(Server.class.getResourceAsStream("resources/logging.properties"));
+        logger = Logging.getAccessibilityLogger();
         SessionManager.Init();
         AccountManager.Init();
         AudioDatabase.Init();
@@ -71,6 +77,7 @@ public class Server {
                         sock.getOutputStream().write(outBuffer);
                         sock.getOutputStream().flush();
                     } else if(tmpBuffer[0] == 10) {
+                        logger.info("Client requested salt.");
                         salt1 = new byte[16];
                         salt2 = new byte[16];
                         SecureRandom random = new SecureRandom();
@@ -82,6 +89,7 @@ public class Server {
                         sock.getOutputStream().write(response.toBytes());
                         sock.getOutputStream().flush();
                     } else if(tmpBuffer[0] == 11) {
+                        logger.info("Client requested login.");
                         if (salt1 == null || salt2 == null) continue;
                         short loginSize = ByteConverter.bytesToShort(buffer, 0);
                         StringBuilder stringBuilder = new StringBuilder();
@@ -96,6 +104,7 @@ public class Server {
                             sock.getOutputStream().flush();
                             continue;
                         }
+
                         byte[] passwordHash = new byte[32];
                         System.arraycopy(buffer, loginSize + 2, passwordHash, 0, 32);
 
@@ -132,6 +141,7 @@ public class Server {
                             sock.getOutputStream().flush();
                         }
                     } else if(tmpBuffer[0] == 16) {
+                        logger.info("Client requested playlists.");
                         byte[] sessionKey = new byte[128];
                         System.arraycopy(buffer, 0, sessionKey, 0, 128);
                         int userID = SessionManager.GetUserID(sessionKey);
@@ -144,6 +154,7 @@ public class Server {
                         sock.getOutputStream().flush();
                     } else if(tmpBuffer[0] == 12) {
                         int audioID = ByteConverter.bytesToInt(buffer, 0);
+                        logger.info("Client requested audio text data (audioID=" + audioID + ").");
                         String[] data = AudioDatabase.GetAudioTextData(audioID);
                         if (data == null) break;
                         PacketGetAudioTextDataResponse response = new PacketGetAudioTextDataResponse();
@@ -152,6 +163,7 @@ public class Server {
                         sock.getOutputStream().write(response.toBytes());
                         sock.getOutputStream().flush();
                     } else if(tmpBuffer[0] == 17) {
+                        logger.info("Client requested allAudio.");
                         int[] audios = AudioDatabase.GetAllAudios();
                         PacketAllAudioResponse response = new PacketAllAudioResponse();
                         response.audios = audios;
